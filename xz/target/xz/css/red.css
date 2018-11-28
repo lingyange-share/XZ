@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*红色版本*/
+.focus{overflow:hidden;width:667px;height:369px;}
+.focus a{color:#eee;text-decoration:none;}
+.focus .box{overflow:hidden;position:relative;width:667px;height:369px;}
+.focus .list{overflow:hidden;width:9999px;}
+.focus .list li{float:left;position:relative;width:667px;}
+.focus .list img{vertical-align:top;}
+.focus .btn{overflow:hidden;position:absolute;bottom:6px;right:10px;}
+.focus .btn li{float:left;width:16px;height:16px;margin:0 0 0 5px;background:#e9e5e4;color:#333;font:11px/16px Tahoma;text-align:center;cursor:pointer;}
+.focus .list p{position:absolute;bottom:0;left:0;width:100%;height:33px;color:#c1282a; background:url(../images/society/title.png) no-repeat; line-height:35px; font-weight:500;}
+.focus .list p img{margin:16px 10px 0 20px;}
+.focus .btn .selected{background:#c1282a;color:#fff;}
+.nav{width:auto;height:38px; background:url(../images/society/red/navbg.png) repeat-x;font-size:14px;}			
+.nav_block a{ float:left;color:#fff; display:block; width:140px; height:38px; line-height:40px; text-align:center;font-weight:700;}
+.nav_block a:hover{color:#fff;}
+.current{background:url(../images/society/red/current.png) no-repeat;width:143px; height:38px;text-align:center;}
+.anynav_title{ width:1000px; border-bottom:1px solid #ddd; line-height:37px; height:35px; color:#c1282a;font-size:14px; font-weight:700;}
+.anynav_title span{ padding-left:30px;}
+.recommandbox{ margin:0 auto; width:1000px; height:auto !important; min-height:550px; height:550px; margin-top:10px; border:1px solid #ddd;}
+.recommandlist{width:1000px; height:auto !important; min-height:550px; height:550px;color:#434343; background:url(../images/society/red/recommand.png) repeat-x;}
+.recommandlist ul{line-height:30px; padding-left:40px; padding-top:30px;_padding-top:0px;_margin-top:20px;}
+.recommandlist ul li{width:470px;float:left; background:url(../images/society/red/list.png) no-repeat; margin-top:15px;margin-left:5px;}
+.recommandlist a{margin-left:12px; margin-top:-13px;width:410px;float:left;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+
+.title{color:#c1282a; text-align:center; line-height:42px;left:30px; position:relative; font-weight:700; font-size:14px;}
+.anyleft{color:#c1282a; text-align:center; top:-38px; line-height:42px;left:30px; position:relative; font-weight:700; font-size:14px; position:relative;}
+.anyright{color:#c1282a; text-align:center; top:-38px; line-height:42px;left:38px; position:relative; font-weight:700; font-size:14px; position:relative;}
+.banner{width:auto; height:372px; background:url(../images/society/red/bannerbg.png) repeat-x;overflow:hidden;}
+.inputone{ background:url(../images/society/red/jianjie.png) no-repeat; border:none; width:144px; height:59px; color:#c1282a;font-weight:700; font-size:14px; padding-left:35px;}
+.inputtwo{ background:url(../images/society/red/zc.png) no-repeat; border:none; width:143px; height:60px; color:#c1282a;font-weight:700; font-size:14px;padding-left:35px;}
+.inputthree{ background:url(../images/society/red/zuzhi.png) no-repeat; border:none; width:144px; height:60px; color:#c1282a;font-weight:700; font-size:14px;padding-left:35px;}
+.inputfour{ background:url(../images/society/red/ruhui.png) no-repeat; border:none; width:143px; height:60px; color:#c1282a;font-weight:700; font-size:14px;padding-left:35px;}
+.inputfive{ background:url(../images/society/red/fuwu.png) no-repeat; border:none; width:144px; height:59px; color:#c1282a;font-weight:700; font-size:14px;padding-left:35px;}
+.inputsix{ background:url(../images/society/red/lianxi.png) no-repeat; border:none; width:143px; height:60px; color:#c1282a;font-weight:700; font-size:14px;padding-left:35px;}
+.block{ color:#434343;}
+.cur{ color:#c1282a;font-weight:700;}
+.bottombox
+{width:atuo;height:131px; margin-top:20px;color:#fff; background:url(../images/society/red/bottombg.png) repeat-x;}	
+.bottombox ul
+{line-height:25px; padding-top:30px;}	
+.bottombox ul li
+{text-align:center;}
+
+.any_list li{ background:url(../images/society/red/list.png) no-repeat; margin-top:15px;margin-left:5px; height:20px;}
+.ocean_title{ background:url(../images/society/red/f_mark.png) no-repeat; height:24px;}
+.intro_title{ background:url(../images/society/red/introduce.png) no-repeat; height:16px;}
+.oceanbox li{ background:url(../images/society/red/f_list.png) no-repeat; margin-top:10px;height:20px;}
+.oceanlistbox li{background:url(../images/society/red/list.png) no-repeat; margin-top:15px;margin-left:5px;}
+.banner_dynamic li{background:url(../images/society/red/list.png) no-repeat; margin-top:15px;margin-left:5px; height:13px;}
+.anybox_mid li{background:url(../images/society/red/list.png) no-repeat; margin-top:15px;margin-left:5px; height:12px;}
+.linebox_bg{background:url(../images/society/red/line.png) no-repeat; width:314px; height:88px; display:inline-block;}

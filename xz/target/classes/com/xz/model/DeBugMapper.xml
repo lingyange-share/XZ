@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="debug">
+  	<select id="getDebugList" resultType="com.xz.model.Debug" parameterType="map">
+  		select * from debug 	
+  		<where>
+  			<if test="username !='' and username!=null">
+  				username like '%${username}%'
+  			</if>
+  		</where>
+  		order by	
+  			<choose>
+  				<when test="sort!=null and sort !=''">
+  				
+  					 ${sort} 
+  					 <if test="order !=null and order != ''">
+  					 ${order}
+  					 </if>
+  				</when><otherwise>
+  					 qid asc
+  				</otherwise>
+  			</choose>		
+  						
+  		limit ${page},${rows} 	
+  	</select>
+    	<select id="getDebugSize" resultType="int" parameterType="map">
+  		select count(qid) from debug 	
+  		  		<where>
+  			<if test="username !='' and username!=null">
+  				username like '%${username}%'
+  			</if>
+  		</where>
+  		
+  	</select>
+  	<insert id="insertIntoBug" parameterType="com.xz.model.Debug" useGeneratedKeys="true" keyProperty="qid">
+  		insert into debug (qid,dscr,detail,acc,whoid)values(qid,#{dscr},#{detail},#{acc},#{whoid})
+  	</insert>
+  	<delete id="delBug" parameterType="int">
+  		delete from debug where qid = #{obj} 
+  	</delete>
+  	<select id="getAccUrl" parameterType="int" resultType="java.lang.String">
+  		select accurl from accupload where atid = (select acc from debug where qid = #{qid})
+  	</select>
+  	<delete id="delAccUpload" parameterType="int">
+		delete from accupload where atid = (select acc from debug where qid = #{obj})
+  	</delete>
+  	<insert id="acc"  useGeneratedKeys="true" keyProperty="atid" >
+  		insert into accupload(atid,accurl,accname)values(atid,#{accurl},#{accname})
+  	</insert>
+  	<select id="showDetail" parameterType="int" resultMap="xm">
+  		select * from debug d,accupload a where d.qid = #{obj} and d.acc = a.atid
+  	</select>
+  	<resultMap type="com.xz.model.Debug" id="xm">
+  		<id property="qid" column="qid"/>
+  		<result property="dscr" column="dscr"/>
+  		<result property="detail" column="detail"/>
+  		<result property="acc" column="acc"/>
+  		<result property="whoid" column="whoid"/>
+  		<association property="ac" javaType="com.xz.model.Accupload">
+  			<id property="atid" column="atid"/>
+  			<result property="accurl" column="accurl"/>
+  			<result property="accname" column="accname"/>
+  		</association>
+  	</resultMap>
+  	<select id="getUrl" resultType="java.lang.String" parameterType="int">
+  		select accurl from accupload where atid = #{obj}
+  	</select>
+  	<insert id="insetinto" parameterType="com.xz.model.Back_Login">
+  		insert into back_login (id,username,password)values(id,#{username},#{password})
+  	</insert>
+  	<update id="zsAdd">
+  		update zs set money=money+1;
+  	</update>
+  	<update id="lsRel">
+  		update ls set money=money-1;
+  	</update>
+  	<select id="verifyLog" parameterType="com.xz.model.Back_Login" resultType="int">
+  		select count(id) from back_login where username = #{username} and password = #{password}
+  	</select>
+  </mapper>

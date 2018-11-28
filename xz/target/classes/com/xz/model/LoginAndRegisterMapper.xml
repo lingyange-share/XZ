@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="logReg">
+  	<select id="getlrList" resultType="com.xz.model.Back_Login" parameterType="map">
+  		select * from back_login 	
+  		<where>
+  			<if test="username !='' and username!=null">
+  				username like '%${username}%'
+  			</if>
+  		</where>
+  		order by	
+  			<choose>
+  				<when test="sort!=null and sort !=''">
+  				
+  					 ${sort} 
+  					 <if test="order !=null and order != ''">
+  					 ${order}
+  					 </if>
+  				</when><otherwise>
+  					 id asc
+  				</otherwise>
+  			</choose>		
+  						
+  		limit ${page},${rows} 	
+  	</select>
+    	<select id="getlrListSize" resultType="int" parameterType="map">
+  		select count(id) from back_login 	
+  		  		<where>
+  			<if test="username !='' and username!=null">
+  				username like '%${username}%'
+  			</if>
+  		</where>
+  		
+  	</select>
+  	<insert id="insetinto" parameterType="com.xz.model.Back_Login">
+  		insert into back_login (id,username,password)values(id,#{username},#{password})
+  	</insert>
+  	<update id="zsAdd">
+  		update zs set money=money+1;
+  	</update>
+  	<update id="lsRel">
+  		update ls set money=money-1;
+  	</update>
+  	<select id="verifyLog" parameterType="com.xz.model.Back_Login" resultType="int">
+  		select count(id) from back_login where username = #{username} and password = #{password}
+  	</select>
+  </mapper>
